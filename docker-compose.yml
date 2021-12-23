@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  certbot:
+    build: .
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - "${currentdir}/etc/letsencrypt:/etc/letsencrypt"
+      - "${currentdir}/var/lib/letsencrypt:/var/lib/letsencrypt"
+      - "${currentdir}/out:/root/out"
+    environment:
+      domain: "${domain}"
+      email: "${email}"

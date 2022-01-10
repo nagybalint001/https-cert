@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 date=$(date '+%Y-%m-%d')
 out_dir="/root/out/$domain/$date"
